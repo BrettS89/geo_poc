@@ -23,7 +23,9 @@ const Ap = connect(mapStateToProps, { setSpeed })(class App extends React.Compon
     lo: 0,
     crossHairSize: 160,
     crossColor: '#000',
-    winningDistance: .003
+    winningDistance: .005,
+    prevDistance: 1,
+    hotOrCold: null,
   };
 
   async componentDidMount() {
@@ -81,6 +83,19 @@ const Ap = connect(mapStateToProps, { setSpeed })(class App extends React.Compon
       }
       this._getLocation(finish);
     }, 1000);
+  };
+
+  _determineHotterOrColder = d => {
+    if (d === this.state.distance) return;
+    if (d > this.state.distance) {
+
+    } else {
+
+    }
+  };
+
+  _displayHotterOrColder = () => {
+    return 'ayooo';
   };
 
   _animateIndicator = () => {
